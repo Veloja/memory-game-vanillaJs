@@ -27,3 +27,7 @@
     background-color: beige;
     z-index: -1;
 }
+.box.win::after {
+    background-color: beige;
+    z-index: -1;
+}
