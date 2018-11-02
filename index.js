@@ -79,16 +79,26 @@ function click(e) {
 
     if(clicks === 1) {
         firstClick = e.target.innerHTML
+        e.target.classList.add('clicked')
         console.log(firstClick)
     } 
     if(clicks === 2) {
         secondClick = e.target.innerHTML
+        e.target.classList.add('clicked')
+        e.target.classList.add('win')
         console.log(secondClick)
         if(secondClick === firstClick){
             console.log('pogodili smo')
             clicks = 0
         } else {
             clicks = 0
+            for(let i = 0; i < boxesArr.length; i++) {
+                if(boxesArr[i].classList.contains('clicked')){
+                    const timer = setTimeout(() => {
+                        boxesArr[i].classList.remove('clicked')
+                    }, 2000)
+                }
+            }
             console.log(clicks)
         }
     }
